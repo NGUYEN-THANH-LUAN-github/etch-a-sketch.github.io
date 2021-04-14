@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/etch-a-sketch-2202733-1838478.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css">
+    <title>Etch-a-Sketch</title>
+</head>
+
+<body>
+    <h1>ETCH-A-SKETCH</h1>
+    <div class="container">
+        <form action="" class="form">
+            <div>
+                <input type="range" id="grid-size" name="grid-size" value="16" min="3" max="64" step="1">
+                <label for="grid-size">Grid size: <output>16</output> x <output>16</output></label>
+                <div class="submit">
+                    <button type="button" class="set">Set Grid</button>
+                    <button type="button" class="reset">Erase All</button>
+                </div>
+            </div>
+        </form>
+        <div class="pad"></div>
+    </div>
+    <p>By Nguyen Thanh Luan</p>
+    <script src="script.js"></script>
+</body>
+
+</html>

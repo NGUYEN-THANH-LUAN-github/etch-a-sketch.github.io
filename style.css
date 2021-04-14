@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    font-family: 'Lobster', cursive;
+}
+
+:root {
+    --grid-border: 0.5px grey solid;
+    --small-size: 350px;
+    --large-size: 500px;
+}
+
+body {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    height: 150px;
+    padding-top: 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+.form {
+    width: var(--small-size);
+    height: 130px;
+    text-align: center;
+}
+
+label {
+    margin: auto;
+}
+
+.submit {
+    margin-top: 15px;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.submit button {
+    width: 150px;
+}
+
+.pad {
+    margin-bottom: auto;
+    border: var(--grid-border);
+    height: var(--small-size);
+    width: var(--small-size);
+    display: grid;
+}
+
+.grid {
+    background-color: white;
+    border: var(--grid-border);
+}
+
+@media (min-width: 700px) {
+    * {
+        font-size: 25px;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    .submit {
+        height: 45px;
+    }
+    .pad {
+        height: var(--large-size);
+        width: var(--large-size);
+    }
+    .form {
+        width: var(--large-size);
+        height: 180px;
+    }
+}
