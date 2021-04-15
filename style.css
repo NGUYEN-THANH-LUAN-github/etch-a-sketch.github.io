@@ -11,7 +11,8 @@
     --pad-border-small: 5px rgb(34, 30, 30) solid;
     --pad-border-large: 10px rgb(34, 30, 30) solid;
     --grid-border: 1px grey solid;
-    --small-size: 350px;
+    --small-size: 300px;
+    --medium-size: 450px;
     --large-size: 550px;
 }
 
@@ -25,8 +26,8 @@ body {
 }
 
 h1 {
-    height: 150px;
-    padding-top: 50px;
+    height: 80px;
+    padding-top: 15px;
 }
 
 .container {
@@ -59,12 +60,13 @@ label {
 }
 
 .submit .button2 {
-    width: 80px;
+    width: 70px;
 }
 
 .pad {
     background-color: grey;
     border: var(--pad-border-small);
+    border-radius: 10px;
     margin-bottom: 30px;
     height: var(--small-size);
     width: var(--small-size);
@@ -76,19 +78,11 @@ label {
     gap: 1px;
 }
 
-p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    position: absolute;
-    height: 15px;
-    bottom: 10px;
-    right: 10px;
-    font-size: 15px;
-}
-
 .grid {
     background-color: white;
 }
 
+.background-color,
 .picked-color {
     display: inline-block;
     width: 14px;
@@ -99,22 +93,36 @@ p {
     background-color: rgb(172, 172, 172);
 }
 
+@media (min-width: 500px) {
+    .form {
+        width: var(--medium-size);
+    }
+    .pad {
+        height: var(--medium-size);
+        width: var(--medium-size);
+    }
+    .submit .button2 {
+        width: 100px;
+    }
+}
+
 @media (min-width: 700px) {
     * {
-        font-size: 25px;
+        font-size: 22px;
     }
     h1 {
+        padding-top: 30px;
+        height: 150px;
         font-size: 50px;
     }
     .submit {
         height: 45px;
     }
     .submit button {
-        width: 150px;
+        width: 170px;
     }
     .submit .button2 {
         width: 120px;
-        font-size: 23px;
     }
     .pad {
         height: var(--large-size);
@@ -125,6 +133,7 @@ p {
         width: var(--large-size);
         height: 180px;
     }
+    .background-color,
     .picked-color {
         width: 23px;
         height: 23px;
