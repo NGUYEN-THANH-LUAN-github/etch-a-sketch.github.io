@@ -45,7 +45,7 @@ window.addEventListener('mousedown', () => {
 })
 window.addEventListener('mouseup', () => {
     isDrawing = false;
-})
+});
 
 
 let color = "rainbow";
@@ -66,7 +66,6 @@ picker.addEventListener("click", () => {
 })
 eraser.addEventListener("click", () => {
     color = "eraser";
-    eraser.classList.toggle('selected');
 })
 
 function setGrid(grid) {
@@ -76,23 +75,25 @@ function setGrid(grid) {
         div.classList.add('grid');
         pad.appendChild(div);
         div.addEventListener('mouseover', () => {
-            if (isDrawing) {
-                switch (color) {
-                    case "rainbow":
-                        rainbow(div);
-                        break;
-                    case "black":
-                        black(div);
-                        break;
-                    case "custom":
-                        custom(div);
-                        break;
-                    case "eraser":
-                        erase(div);
-                }
-            }
-
+            if (isDrawing) chooseBrush(div)
         })
+        div.addEventListener('mousedown', () => { chooseBrush(div) });
+    }
+}
+
+function chooseBrush(div) {
+    switch (color) {
+        case "rainbow":
+            rainbow(div);
+            break;
+        case "black":
+            black(div);
+            break;
+        case "custom":
+            custom(div);
+            break;
+        case "eraser":
+            erase(div);
     }
 }
 
