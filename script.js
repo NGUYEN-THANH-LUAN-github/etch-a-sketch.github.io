@@ -39,6 +39,7 @@ toggleGrid.addEventListener('click', () => {
 reset.addEventListener("click", eraseAll);
 
 let isDrawing = false;
+
 window.addEventListener('mousedown', () => {
     isDrawing = true;
 })
@@ -46,11 +47,13 @@ window.addEventListener('mouseup', () => {
     isDrawing = false;
 })
 
+
 let color = "rainbow";
 const blackColor = document.querySelector(".black");
 const rainbowColor = document.querySelector(".rainbow");
-const customColor = document.querySelector(".picked-color");
 const picker = document.querySelector(".picker");
+const eraser = document.querySelector(".eraser");
+const customColor = document.querySelector(".picked-color");
 
 blackColor.addEventListener("click", () => {
     color = "black";
@@ -61,6 +64,10 @@ rainbowColor.addEventListener("click", () => {
 picker.addEventListener("click", () => {
     color = "custom";
 })
+eraser.addEventListener("click", () => {
+    color = "eraser";
+    eraser.classList.toggle('selected');
+})
 
 function setGrid(grid) {
     pad.style.cssText = `grid-template: repeat(${grid}, 1fr) / repeat(${grid}, 1fr)`;
@@ -70,21 +77,24 @@ function setGrid(grid) {
         pad.appendChild(div);
         div.addEventListener('mouseover', () => {
             if (isDrawing) {
-                if (color === "rainbow") {
-                    rainbow(div);
-                };
-                if (color === "black") {
-                    black(div);
-                };
-                if (color === "custom") {
-                    custom(div);
+                switch (color) {
+                    case "rainbow":
+                        rainbow(div);
+                        break;
+                    case "black":
+                        black(div);
+                        break;
+                    case "custom":
+                        custom(div);
+                        break;
+                    case "eraser":
+                        erase(div);
                 }
             }
+
         })
     }
 }
-
-
 
 function rainbow(div) {
     const r = randNum(0, 255);
@@ -99,6 +109,10 @@ function black(div) {
 
 function custom(div) {
     div.style.backgroundColor = customColor.value;
+}
+
+function erase(div) {
+    div.style.backgroundColor = "white";
 }
 
 function eraseAll() {

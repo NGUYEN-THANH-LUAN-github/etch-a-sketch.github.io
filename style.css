@@ -58,6 +58,10 @@ label {
     border-radius: 10px;
 }
 
+.submit .button2 {
+    width: 80px;
+}
+
 .pad {
     background-color: grey;
     border: var(--pad-border-small);
@@ -107,6 +111,10 @@ p {
     }
     .submit button {
         width: 150px;
+    }
+    .submit .button2 {
+        width: 120px;
+        font-size: 23px;
     }
     .pad {
         height: var(--large-size);
