@@ -8,10 +8,11 @@
 }
 
 :root {
-    --pad-border: 3px rgb(34, 30, 30) solid;
+    --pad-border-small: 5px rgb(34, 30, 30) solid;
+    --pad-border-large: 10px rgb(34, 30, 30) solid;
     --grid-border: 1px grey solid;
     --small-size: 350px;
-    --large-size: 500px;
+    --large-size: 550px;
 }
 
 body {
@@ -58,12 +59,17 @@ label {
 }
 
 .pad {
-    border: var(--pad-border);
+    background-color: grey;
+    border: var(--pad-border-small);
     margin-bottom: 30px;
     height: var(--small-size);
     width: var(--small-size);
     display: grid;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.801);
+}
+
+.grid-gap {
+    gap: 1px;
 }
 
 p {
@@ -79,14 +85,14 @@ p {
     background-color: white;
 }
 
-.grid-border {
-    border: var(--grid-border);
-}
-
-.color {
+.picked-color {
     display: inline-block;
     width: 14px;
     height: 14px;
+}
+
+.selected {
+    background-color: rgb(172, 172, 172);
 }
 
 @media (min-width: 700px) {
@@ -105,12 +111,13 @@ p {
     .pad {
         height: var(--large-size);
         width: var(--large-size);
+        border: var(--pad-border-large);
     }
     .form {
         width: var(--large-size);
         height: 180px;
     }
-    .color {
+    .picked-color {
         width: 23px;
         height: 23px;
     }

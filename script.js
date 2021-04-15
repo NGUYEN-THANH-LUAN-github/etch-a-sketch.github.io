@@ -1,7 +1,17 @@
 const randNum = (min, max) => (Math.floor(Math.random() * (max - min + 1)) + min);
 const pad = document.querySelector(".pad ");
-const toggleGrid = document.querySelector(".toggle-grid");
+const toggleGrid = document.querySelector(".toggle-grid-gap");
 const reset = document.querySelector(".reset");
+const button2s = document.querySelectorAll(".button2");
+
+for (let button2 of button2s) {
+    button2.addEventListener("click", () => {
+        for (let button2 of button2s) {
+            button2.classList.remove("selected");
+        }
+        button2.classList.toggle('selected');
+    })
+}
 
 // slider
 const input = document.querySelector("input");
@@ -21,7 +31,10 @@ input.addEventListener("change", () => {
     setGrid(input.value);
 })
 
-toggleGrid.addEventListener('click', gridToggle);
+toggleGrid.addEventListener('click', () => {
+    gridToggle();
+    toggleGrid.classList.toggle('selected');
+});
 
 reset.addEventListener("click", eraseAll);
 
@@ -33,26 +46,60 @@ window.addEventListener('mouseup', () => {
     isDrawing = false;
 })
 
+let color = "rainbow";
+const blackColor = document.querySelector(".black");
+const rainbowColor = document.querySelector(".rainbow");
+const customColor = document.querySelector(".picked-color");
+const picker = document.querySelector(".picker");
+
+blackColor.addEventListener("click", () => {
+    color = "black";
+})
+rainbowColor.addEventListener("click", () => {
+    color = "rainbow";
+})
+picker.addEventListener("click", () => {
+    color = "custom";
+})
+
 function setGrid(grid) {
     pad.style.cssText = `grid-template: repeat(${grid}, 1fr) / repeat(${grid}, 1fr)`;
     for (let i = 1; i <= grid * grid; i++) {
         const div = document.createElement('div');
         div.classList.add('grid');
-        div.classList.add('grid-border');
         pad.appendChild(div);
-
         div.addEventListener('mouseover', () => {
             if (isDrawing) {
-                const r = randNum(0, 255);
-                const g = randNum(0, 255);
-                const b = randNum(0, 255);
-                div.style.backgroundColor = `rgb(${r},${g},${b})`
+                if (color === "rainbow") {
+                    rainbow(div);
+                };
+                if (color === "black") {
+                    black(div);
+                };
+                if (color === "custom") {
+                    custom(div);
+                }
             }
         })
     }
 }
 
 
+
+function rainbow(div) {
+    const r = randNum(0, 255);
+    const g = randNum(0, 255);
+    const b = randNum(0, 255);
+    div.style.backgroundColor = `rgb(${r},${g},${b})`
+}
+
+function black(div) {
+    div.style.backgroundColor = "black";
+}
+
+function custom(div) {
+    div.style.backgroundColor = customColor.value;
+}
 
 function eraseAll() {
     const divs = pad.querySelectorAll("div");
@@ -62,8 +109,5 @@ function eraseAll() {
 }
 
 function gridToggle() {
-    const divs = pad.querySelectorAll("div");
-    for (let div of divs) {
-        div.classList.toggle('grid-border');
-    }
+    pad.classList.toggle('grid-gap');
 }
