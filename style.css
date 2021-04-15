@@ -13,7 +13,7 @@
     --grid-border: 1px grey solid;
     --small-size: 300px;
     --medium-size: 450px;
-    --large-size: 550px;
+    --large-size: 600px;
 }
 
 body {
@@ -67,7 +67,7 @@ label {
     background-color: grey;
     border: var(--pad-border-small);
     border-radius: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     height: var(--small-size);
     width: var(--small-size);
     display: grid;
@@ -101,6 +101,9 @@ label {
         height: var(--medium-size);
         width: var(--medium-size);
     }
+    .submit button {
+        width: 130px;
+    }
     .submit .button2 {
         width: 100px;
     }
@@ -119,7 +122,7 @@ label {
         height: 45px;
     }
     .submit button {
-        width: 170px;
+        width: 180px;
     }
     .submit .button2 {
         width: 120px;
@@ -128,6 +131,7 @@ label {
         height: var(--large-size);
         width: var(--large-size);
         border: var(--pad-border-large);
+        margin-bottom: 35px;
     }
     .form {
         width: var(--large-size);
