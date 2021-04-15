@@ -8,12 +8,14 @@
 }
 
 :root {
-    --grid-border: 0.5px grey solid;
+    --pad-border: 3px rgb(34, 30, 30) solid;
+    --grid-border: 1px grey solid;
     --small-size: 350px;
     --large-size: 500px;
 }
 
 body {
+    position: relative;
     background-color: antiquewhite;
     display: flex;
     flex-direction: column;
@@ -43,7 +45,7 @@ label {
 }
 
 .submit {
-    margin-top: 15px;
+    margin-top: 20px;
     height: 30px;
     width: 100%;
     display: flex;
@@ -51,20 +53,40 @@ label {
 }
 
 .submit button {
-    width: 150px;
+    width: 100px;
+    border-radius: 10px;
 }
 
 .pad {
-    margin-bottom: auto;
-    border: var(--grid-border);
+    border: var(--pad-border);
+    margin-bottom: 30px;
     height: var(--small-size);
     width: var(--small-size);
     display: grid;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.801);
+}
+
+p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: absolute;
+    height: 15px;
+    bottom: 10px;
+    right: 10px;
+    font-size: 15px;
 }
 
 .grid {
     background-color: white;
+}
+
+.grid-border {
     border: var(--grid-border);
+}
+
+.color {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
 }
 
 @media (min-width: 700px) {
@@ -77,6 +99,9 @@ label {
     .submit {
         height: 45px;
     }
+    .submit button {
+        width: 150px;
+    }
     .pad {
         height: var(--large-size);
         width: var(--large-size);
@@ -84,5 +109,9 @@ label {
     .form {
         width: var(--large-size);
         height: 180px;
+    }
+    .color {
+        width: 23px;
+        height: 23px;
     }
 }

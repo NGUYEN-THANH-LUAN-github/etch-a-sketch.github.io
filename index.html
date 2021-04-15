@@ -16,18 +16,24 @@
     <div class="container">
         <form action="" class="form">
             <div>
-                <input type="range" id="grid-size" name="grid-size" value="16" min="3" max="64" step="1">
+                <input type="range" id="grid-size" name="grid-size" value="16" min="3" max="100" step="1">
                 <label for="grid-size">Grid size: <output>16</output> x <output>16</output></label>
                 <div class="submit">
-                    <button type="button" class="set">Set Grid</button>
+                    <button type="button" class="toggle-grid">Toggle Grid</button>
                     <button type="button" class="reset">Erase All</button>
                 </div>
             </div>
         </form>
         <div class="pad"></div>
+        <div class="submit">
+            <button type="button" class="black">Black</button>
+            <button type="button" class="rainbow">Rainbow</button>
+            <button class="picker">Custom: <input type="color" class="color" value="#e66465"></button>
+        </div>
     </div>
-    <p>By Nguyen Thanh Luan</p>
+    <p>by Nguyen Thanh Luan</p>
     <script src="script.js"></script>
+    <script src="color.js"></script>
 </body>
 
 </html>
