@@ -12,8 +12,8 @@
     --pad-border-large: 10px rgb(34, 30, 30) solid;
     --grid-border: 1px grey solid;
     --small-size: 300px;
-    --medium-size: 450px;
-    --large-size: 600px;
+    --medium-size: 400px;
+    --large-size: 500px;
 }
 
 body {
@@ -55,7 +55,7 @@ label {
 }
 
 .submit button {
-    width: 100px;
+    width: 80px;
     border-radius: 10px;
 }
 
@@ -67,7 +67,6 @@ label {
     background-color: grey;
     border: var(--pad-border-small);
     border-radius: 10px;
-    margin-bottom: 10px;
     height: var(--small-size);
     width: var(--small-size);
     display: grid;
@@ -111,31 +110,31 @@ label {
 
 @media (min-width: 700px) {
     * {
-        font-size: 22px;
+        font-size: 20px;
     }
     h1 {
         padding-top: 30px;
-        height: 150px;
-        font-size: 50px;
+        height: 100px;
+        font-size: 40px;
     }
     .submit {
         height: 45px;
     }
     .submit button {
-        width: 180px;
+        width: 130px;
     }
     .submit .button2 {
-        width: 120px;
+        width: 110px;
     }
     .pad {
         height: var(--large-size);
         width: var(--large-size);
         border: var(--pad-border-large);
-        margin-bottom: 35px;
+        margin-bottom: 5px;
     }
     .form {
         width: var(--large-size);
-        height: 180px;
+        height: 150px;
     }
     .background-color,
     .picked-color {
