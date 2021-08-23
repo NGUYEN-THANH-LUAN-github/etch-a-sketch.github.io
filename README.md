@@ -1,3 +1,5 @@
-# etch-a-sketch.github.io
+# etch-a-sketch
 
-[demo](https://nguyen-thanh-luan-github.github.io/etch-a-sketch.github.io/)
+a project from The Odin Project
+
+Watch [demo](https://thanh-luan-nguyen.github.io/etch-a-sketch/)
