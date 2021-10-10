@@ -1,4 +1,4 @@
-# 🌱 etch-a-sketch
+# 🌱 etch-a-sketch drawing pad
 
 a project from The Odin Project
 
